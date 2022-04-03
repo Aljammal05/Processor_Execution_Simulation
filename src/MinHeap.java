@@ -73,8 +73,7 @@ public class MinHeap<E extends Comparable<E>>{
 
     private void resize(int capacity){
         E[] temp = (E[]) new Comparable[capacity];
-        for (int i = 1; i <= n; i++)
-            temp[i] = array[i];
+        if (n >= 0) System.arraycopy(array, 1, temp, 1, n);
         array = temp;
     }
 }

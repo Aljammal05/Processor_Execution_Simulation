@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class ReadConfigFile {
 
-    private  int numberOfProcessors , numberOfTasks;
+    private  int numberOfProcessors;
     private final Queue<Task> tasks = new LinkedList<>();
     private BufferedReader reader;
 
@@ -23,7 +23,7 @@ public class ReadConfigFile {
     public void readData(){
         try {
             numberOfProcessors = Integer.parseInt(reader.readLine().substring(23).trim());
-            numberOfTasks = Integer.parseInt(reader.readLine().substring(18).trim());
+            int numberOfTasks = Integer.parseInt(reader.readLine().substring(18).trim());
             reader.readLine();
             for(int i = 0; i< numberOfTasks; i++){
                 int creationCycle , requestedTime , priority ;
